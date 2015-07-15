@@ -85,6 +85,38 @@ class Profile
         $this->initializeOptions();
     }
 
+    public function username($username)
+    {
+        // Overwrite the default username.
+        $this->updateUsername($username);
+
+        // Return this.
+        return $this;
+    }
+
+    public function services()
+    {
+        // The requested services.
+        $requested_services = func_get_args();
+
+        // Services
+        $services = [];
+
+        // Loop through each requested services.
+        foreach ($requested_services as $requested_service)
+        {
+            // Check if the method exists.
+            if(method_exists('Appsketch\Profile\Profile', $requested_service))
+            {
+                // Push the result from the service to the services array.
+                $services[$requested_service] = $this->$requested_service();
+            }
+        }
+
+        // return the services array.
+        return $services;
+    }
+
     /**
      * Get the twitter profile url.
      *
