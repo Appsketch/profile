@@ -64,3 +64,4 @@ Got a suggestion? Create an issue.
 | Facebook     | facebook()    |
 | Twitter      | twitter()     |
 | Google Plus  | google_plus() |
+| Linked In    | linked_in()   |

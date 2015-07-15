@@ -23,7 +23,8 @@ class Profile
     private $social_media = [
         'twitter'     => Profile::TWITTER,
         'facebook'    => Profile::FACEBOOK,
-        'google_plus' => Profile::GOOGLE_PLUS
+        'google_plus' => Profile::GOOGLE_PLUS,
+        'linked_in'   => Profile::LINKED_IN
     ];
 
     /**
@@ -40,6 +41,11 @@ class Profile
      * GOOGLE PLUS
      */
     const GOOGLE_PLUS = 'https://plus.google.com/u/0/+{{username}}';
+
+    /**
+     * LINKED IN
+     */
+    const LINKED_IN = 'https://nl.linkedin.com/in/{{username}}';
 
     /**
      * @return mixed
@@ -179,6 +185,22 @@ class Profile
 
         // Return the parsed google plus url.
         return $this->parseUrl('google_plus');
+    }
+
+    /**
+     * Get the linked in profile url.
+     *
+     * @param null $username
+     *
+     * @return mixed
+     */
+    public function linked_in($username = null)
+    {
+        // Overwrite the default username.
+        $this->updateUsername($username);
+
+        // Return the parsed linked in url.
+        return $this->parseUrl('linked_in');
     }
 
     /**
