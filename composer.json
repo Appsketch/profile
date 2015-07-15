@@ -1,0 +1,17 @@
+{
+    "name": "appsketch/social-profile",
+    "autoload": {
+        "psr-4": {
+            "Appsketch\\Profile\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "phpspec/phpspec": "~2.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Appsketch\\Profile\\Tests\\": "tests/"
+        }
+    }
+}

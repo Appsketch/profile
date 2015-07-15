@@ -1,0 +1,4 @@
+suites:
+  library_suite:
+    namespace: Appsketch\Profile
+    psr4_prefix: Appsketch\Profile
