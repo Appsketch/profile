@@ -3,8 +3,14 @@
 namespace Appsketch\Profile\Providers;
 
 use Appsketch\Profile\Profile;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class ProfileServiceProvider
+ *
+ * @package Appsketch\Profile\Providers
+ */
 class ProfileServiceProvider extends ServiceProvider
 {
     /**
@@ -37,6 +43,9 @@ class ProfileServiceProvider extends ServiceProvider
 
         // Merge config.
         $this->mergeConfig();
+
+        // Alias Profile.
+        $this->aliasProfile();
     }
 
     /**
@@ -68,5 +77,31 @@ class ProfileServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/../config/profile.php', 'profile'
         );
+    }
+
+    /**
+     * Alias profile.
+     */
+    private function aliasProfile()
+    {
+        if(!$this->aliasExists('Profile'))
+        {
+            AliasLoader::getInstance()->alias(
+                'Profile',
+                \Appsketch\Profile\Facades\Profile::class
+            );
+        }
+    }
+
+    /**
+     * Check if an alias already exists in the IOC.
+     *
+     * @param $alias
+     *
+     * @return bool
+     */
+    private function aliasExists($alias)
+    {
+        return array_key_exists($alias, AliasLoader::getInstance()->getAliases());
     }
 }
