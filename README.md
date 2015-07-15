@@ -57,7 +57,10 @@ Route::get('/profile', function()
 
 ## Available social media's
 
-- Facebook    facebook()
-- Twitter     twitter()
-- Google Plus google_plus()
-- ...
+Got a suggestion? Create an issue. 
+
+| Social media | Method        |
+| ------------ |---------------|
+| Facebook     | facebook()    |
+| Twitter      | twitter()     |
+| Google Plus  | google_plus() |
