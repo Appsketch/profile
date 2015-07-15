@@ -21,8 +21,9 @@ class Profile
      * @var array
      */
     private $social_media = [
-        'twitter'  => Profile::TWITTER,
-        'facebook' => Profile::FACEBOOK
+        'twitter'     => Profile::TWITTER,
+        'facebook'    => Profile::FACEBOOK,
+        'google_plus' => Profile::GOOGLE_PLUS
     ];
 
     /**
@@ -34,6 +35,11 @@ class Profile
      * FACEBOOK
      */
     const FACEBOOK = 'https://www.facebook.com/{{username}}';
+
+    /**
+     * GOOGLE PLUS
+     */
+    const GOOGLE_PLUS = 'https://plus.google.com/u/0/+{{username}}';
 
     /**
      * @return mixed
@@ -85,6 +91,13 @@ class Profile
         $this->initializeOptions();
     }
 
+    /**
+     * Overwrite the default username.
+     *
+     * @param $username
+     *
+     * @return $this
+     */
     public function username($username)
     {
         // Overwrite the default username.
@@ -94,6 +107,9 @@ class Profile
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function services()
     {
         // The requested services.
@@ -147,6 +163,22 @@ class Profile
 
         // Return the parsed facebook url.
         return $this->parseUrl('facebook');
+    }
+
+    /**
+     * Get the google plus profile url.
+     *
+     * @param null $username
+     *
+     * @return mixed
+     */
+    public function google_plus($username = null)
+    {
+        // Overwrite the default username.
+        $this->updateUsername($username);
+
+        // Return the parsed google plus url.
+        return $this->parseUrl('google_plus');
     }
 
     /**

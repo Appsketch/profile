@@ -17,7 +17,7 @@ class ProfileExeption extends \Exception
     public function __construct($required_option)
     {
         // Set the message.
-        $message = 'The option \'' . $required_option .'\' is required please set it.';
+        $message = 'The option \'' . $required_option .'\' is required please set it via the config file or the called function.';
 
         // Construct the parent.
         parent::__construct($message);
