@@ -28,7 +28,8 @@ class Profile
         'instagram'   => Profile::INSTAGRAM,
         'telegram'    => Profile::TELEGRAM,
         'pinterest'   => Profile::PINTEREST,
-        'tumblr'      => Profile::TUMBLR
+        'tumblr'      => Profile::TUMBLR,
+        'vk'          => Profile::VK,
     ];
 
     /**
@@ -70,6 +71,11 @@ class Profile
      * TUMBLR
      */
     const TUMBLR = 'http://{{username}}.tumblr.com';
+
+    /**
+     * VK
+     */
+    const VK = 'http://vk.com/{{username}}';
 
     /**
      * @return mixed

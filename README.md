@@ -71,3 +71,4 @@ Got a suggestion? Create an issue.
 | Telegram     | telegram()    |
 | Pinterest    | pinterest()   |
 | Tumblr       | tumblr()      |
+| VK           | vk()          |
