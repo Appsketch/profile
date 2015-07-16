@@ -26,6 +26,7 @@ class Profile
         'google_plus' => Profile::GOOGLE_PLUS,
         'linked_in'   => Profile::LINKED_IN,
         'instagram'   => Profile::INSTAGRAM,
+        'telegram'    => Profile::TELEGRAM
     ];
 
     /**
@@ -52,6 +53,11 @@ class Profile
      * INSTAGRAM
      */
     const INSTAGRAM = 'https://instagram.com/{{username}}';
+
+    /**
+     * TELEGRAM
+     */
+    const TELEGRAM = 'https://web.telegram.org/#/im?p=@{{username}}';
 
     /**
      * @return mixed

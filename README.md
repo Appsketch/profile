@@ -66,3 +66,4 @@ Got a suggestion? Create an issue.
 | Google Plus  | google_plus() |
 | Linked In    | linked_in()   |
 | Instagram    | instagram()   |
+| Telegram     | telegram()    |
