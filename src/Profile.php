@@ -237,6 +237,13 @@ class Profile
         // Services
         $services = [];
 
+        // Get all the services if none isset.
+        if(empty($requested_services))
+        {
+            // Overwrite the requested services array with all the social medias.
+            $requested_services = array_keys($this->getSocialMedia());
+        }
+
         // Loop through each requested services.
         foreach ($requested_services as $requested_service)
         {
