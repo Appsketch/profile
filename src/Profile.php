@@ -33,7 +33,8 @@ class Profile
         'flickr'      => Profile::FLICKR,
         'vine'        => Profile::VINE,
         'disqus'      => Profile::DISQUS,
-        'snapchat'    => Profile::SNAPCHAT
+        'snapchat'    => Profile::SNAPCHAT,
+        'medium'      => Profile::MEDIUM
     ];
 
     /**
@@ -100,6 +101,11 @@ class Profile
      * SNAPCHAT
      */
     const SNAPCHAT = 'snapchat://?u={{username}}';
+
+    /**
+     * MEDIUM
+     */
+    const MEDIUM = 'https://medium.com/@{{username}}';
 
     /**
      * @return mixed

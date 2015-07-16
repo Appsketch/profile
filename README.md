@@ -76,3 +76,4 @@ Got a suggestion? Create an issue.
 | Vine         | vine()        |
 | Disqus       | disqus()      |
 | Snapchat     | snapchat()    |
+| Medium       | medium()      |
