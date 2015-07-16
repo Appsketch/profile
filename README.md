@@ -75,3 +75,4 @@ Got a suggestion? Create an issue.
 | Flickr       | flickr()      |
 | Vine         | vine()        |
 | Disqus       | disqus()      |
+| Snapchat     | snapchat()    |

@@ -32,7 +32,8 @@ class Profile
         'vk'          => Profile::VK,
         'flickr'      => Profile::FLICKR,
         'vine'        => Profile::VINE,
-        'disqus'      => Profile::DISQUS
+        'disqus'      => Profile::DISQUS,
+        'snapchat'    => Profile::SNAPCHAT
     ];
 
     /**
@@ -94,6 +95,11 @@ class Profile
      * DISQUS
      */
     const DISQUS = 'https://disqus.com/by/{{username}}';
+
+    /**
+     * SNAPCHAT
+     */
+    const SNAPCHAT = 'snapchat://?u={{username}}';
 
     /**
      * @return mixed
