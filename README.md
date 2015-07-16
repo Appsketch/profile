@@ -5,7 +5,7 @@
 First, pull in the package through Composer.
 
 ```js
-composer require appsketh/social-profile
+composer require appsketch/social-profile
 ```
 
 And then, if using Laravel 5.1, include the service provider within `app/config/app.php`.
