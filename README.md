@@ -1,5 +1,7 @@
 # Social Profile Links
 
+[![Latest Stable Version](https://poser.pugx.org/appsketch/social-profile/v/stable)](https://packagist.org/packages/appsketch/social-profile) [![Total Downloads](https://poser.pugx.org/appsketch/social-profile/downloads)](https://packagist.org/packages/appsketch/social-profile) [![Latest Unstable Version](https://poser.pugx.org/appsketch/social-profile/v/unstable)](https://packagist.org/packages/appsketch/social-profile) [![License](https://poser.pugx.org/appsketch/social-profile/license)](https://packagist.org/packages/appsketch/social-profile)
+
 ## Installation
 
 First, pull in the package through Composer.
