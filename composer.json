@@ -1,5 +1,14 @@
 {
     "name": "appsketch/social-profile",
+    "description": "Laravel package for generating social profile links.",
+    "keywords": ["laravel", "social", "social media", "profile", "links"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maarten Paauw",
+            "email": "maartenpaauw@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Appsketch\\Profile\\": "src/"
@@ -13,5 +22,6 @@
         "psr-4": {
             "Appsketch\\Profile\\Tests\\": "tests/"
         }
-    }
+    },
+    "minimum-stability": "stable"
 }
