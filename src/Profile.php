@@ -67,24 +67,38 @@ class Profile
     /**
      * Get the social media link.
      *
-     * @param $social_media
+     * @param null $social_media
      *
-     * @return string|null
+     * @return array|null
      */
-    private function getSocialMedia($social_media)
+    private function getSocialMedia($social_media = null)
     {
-        // Check if the social media url exists.
-        if(array_key_exists($social_media, $this->social_media))
+        // Check if specific social media isset.
+        if(isset($social_media) && !empty($social_media))
         {
-            // Return the social media url.
-            return $this->social_media[$social_media];
+            // Social media.
+            $social_medias = $this->getSocialMedia();
+
+            // Check if the social media url exists.
+            if(array_key_exists($social_media, $social_medias))
+            {
+                // Return the social media url.
+                return $social_medias[$social_media];
+            }
+
+            // If not.
+            else
+            {
+                // Return null.
+                return null;
+            }
         }
 
         // If not.
         else
         {
-            // Return null.
-            return null;
+            // Return the whole array.
+            return $this->social_media;
         }
     }
 
@@ -95,6 +109,30 @@ class Profile
     {
         // Initialize the options.
         $this->initializeOptions();
+    }
+
+    /**
+     * Get the social media profile link.
+     *
+     * @param $method
+     * @param $args
+     *
+     * @return mixed
+     */
+    public function __call($method, $args)
+    {
+        // Check if the called social network exists.
+        if(array_key_exists($method, $this->social_media))
+        {
+            if(isset($args) && !empty($args))
+            {
+                // Overwrite the default username.
+                $this->updateUsername($args[0]);
+            }
+
+            // Return the parsed twitter url.
+            return $this->parseUrl($method);
+        }
     }
 
     /**
@@ -114,6 +152,18 @@ class Profile
     }
 
     /**
+     * Overwrite the default username.
+     *
+     * @param $username
+     *
+     * @return Profile
+     */
+    public function user($username)
+    {
+        return $this->username($username);
+    }
+
+    /**
      * @return array
      */
     public function services()
@@ -127,8 +177,8 @@ class Profile
         // Loop through each requested services.
         foreach ($requested_services as $requested_service)
         {
-            // Check if the method exists.
-            if(method_exists('Appsketch\Profile\Profile', $requested_service))
+            // Check if the requested media exists.
+            if(array_key_exists($requested_service, $this->social_media))
             {
                 // Push the result from the service to the services array.
                 $services[$requested_service] = $this->$requested_service();
@@ -137,70 +187,6 @@ class Profile
 
         // return the services array.
         return $services;
-    }
-
-    /**
-     * Get the twitter profile url.
-     *
-     * @param null $username
-     *
-     * @return mixed
-     */
-    public function twitter($username = null)
-    {
-        // Overwrite the default username.
-        $this->updateUsername($username);
-
-        // Return the parsed twitter url.
-        return $this->parseUrl('twitter');
-    }
-
-    /**
-     * Get the facebook profile url.
-     *
-     * @param null $username
-     *
-     * @return mixed
-     */
-    public function facebook($username = null)
-    {
-        // Overwrite the default username.
-        $this->updateUsername($username);
-
-        // Return the parsed facebook url.
-        return $this->parseUrl('facebook');
-    }
-
-    /**
-     * Get the google plus profile url.
-     *
-     * @param null $username
-     *
-     * @return mixed
-     */
-    public function google_plus($username = null)
-    {
-        // Overwrite the default username.
-        $this->updateUsername($username);
-
-        // Return the parsed google plus url.
-        return $this->parseUrl('google_plus');
-    }
-
-    /**
-     * Get the linked in profile url.
-     *
-     * @param null $username
-     *
-     * @return mixed
-     */
-    public function linked_in($username = null)
-    {
-        // Overwrite the default username.
-        $this->updateUsername($username);
-
-        // Return the parsed linked in url.
-        return $this->parseUrl('linked_in');
     }
 
     /**
