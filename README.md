@@ -68,3 +68,4 @@ Got a suggestion? Create an issue.
 | Instagram    | instagram()   |
 | Telegram     | telegram()    |
 | Pinterest    | pinterest()   |
+| Tumblr       | tumblr()      |

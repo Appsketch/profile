@@ -27,7 +27,8 @@ class Profile
         'linked_in'   => Profile::LINKED_IN,
         'instagram'   => Profile::INSTAGRAM,
         'telegram'    => Profile::TELEGRAM,
-        'pinterest'   => Profile::PINTEREST
+        'pinterest'   => Profile::PINTEREST,
+        'tumblr'      => Profile::TUMBLR
     ];
 
     /**
@@ -64,6 +65,11 @@ class Profile
      * PINTEREST
      */
     const PINTEREST = 'https://www.pinterest.com/{{username}}';
+
+    /**
+     * TUMBLR
+     */
+    const TUMBLR = 'http://{{username}}.tumblr.com';
 
     /**
      * @return mixed
