@@ -8,7 +8,7 @@ namespace Appsketch\Profile\Exceptions;
  *
  * @package Appsketch\Profile\Exceptions
  */
-class ProfileExeption extends \Exception
+class RequiredParameterExeption extends \Exception
 {
 
     /**

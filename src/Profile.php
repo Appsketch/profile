@@ -2,7 +2,8 @@
 
 namespace Appsketch\Profile;
 
-use Appsketch\Profile\Exceptions\ProfileExeption;
+use Appsketch\Profile\Exceptions\NotASocialMediaException;
+use Appsketch\Profile\Exceptions\RequiredParameterExeption;
 use Illuminate\Support\Facades\Config;
 
 /**
@@ -178,6 +179,7 @@ class Profile
      * @param $args
      *
      * @return mixed
+     * @throws NotASocialMediaException
      */
     public function __call($method, $args)
     {
@@ -195,6 +197,13 @@ class Profile
 
             // Return the parsed twitter url.
             return $this->parseUrl($method);
+        }
+
+        // If not
+        else
+        {
+            // Throw exception.
+            throw new NotASocialMediaException;
         }
     }
 
@@ -297,7 +306,7 @@ class Profile
     /**
      * Check the required options.
      *
-     * @throws ProfileExeption
+     * @throws RequiredParameterExeption
      */
     private function checkOptions()
     {
@@ -311,7 +320,7 @@ class Profile
             if(!isset($this->$required_option) || empty($this->$required_option))
             {
                 // Throw the exception.
-                Throw new ProfileExeption($required_option);
+                Throw new RequiredParameterExeption($required_option);
             }
         }
 
@@ -331,6 +340,9 @@ class Profile
 
         // Get the username
         $username = $this->getUsername();
+
+        // Check username.
+        $this->checkOptions('username');
 
         // Return the social profile url.
         return str_replace('{{username}}', $username, $url);
