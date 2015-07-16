@@ -30,7 +30,8 @@ class Profile
         'pinterest'   => Profile::PINTEREST,
         'tumblr'      => Profile::TUMBLR,
         'vk'          => Profile::VK,
-        'flickr'      => Profile::FLICKR
+        'flickr'      => Profile::FLICKR,
+        'vine'        => Profile::VINE
     ];
 
     /**
@@ -82,6 +83,11 @@ class Profile
      * FLICKR
      */
     const FLICKR = 'https://www.flickr.com/photos/{{username}}';
+
+    /**
+     * VINE
+     */
+    const VINE = 'https://vine.co/{{username}}';
 
     /**
      * @return mixed
