@@ -24,7 +24,8 @@ class Profile
         'twitter'     => Profile::TWITTER,
         'facebook'    => Profile::FACEBOOK,
         'google_plus' => Profile::GOOGLE_PLUS,
-        'linked_in'   => Profile::LINKED_IN
+        'linked_in'   => Profile::LINKED_IN,
+        'instagram'   => Profile::INSTAGRAM,
     ];
 
     /**
@@ -46,6 +47,11 @@ class Profile
      * LINKED IN
      */
     const LINKED_IN = 'https://nl.linkedin.com/in/{{username}}';
+
+    /**
+     * INSTAGRAM
+     */
+    const INSTAGRAM = 'https://instagram.com/{{username}}';
 
     /**
      * @return mixed
@@ -121,6 +127,9 @@ class Profile
      */
     public function __call($method, $args)
     {
+        // Method
+        $method = strtolower($method);
+
         // Check if the called social network exists.
         if(array_key_exists($method, $this->social_media))
         {
