@@ -30,6 +30,7 @@ class Profile
         'pinterest'   => Profile::PINTEREST,
         'tumblr'      => Profile::TUMBLR,
         'vk'          => Profile::VK,
+        'flickr'      => Profile::FLICKR
     ];
 
     /**
@@ -76,6 +77,11 @@ class Profile
      * VK
      */
     const VK = 'http://vk.com/{{username}}';
+
+    /**
+     * FLICKR
+     */
+    const FLICKR = 'https://www.flickr.com/photos/{{username}}';
 
     /**
      * @return mixed

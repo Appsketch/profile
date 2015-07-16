@@ -72,3 +72,4 @@ Got a suggestion? Create an issue.
 | Pinterest    | pinterest()   |
 | Tumblr       | tumblr()      |
 | VK           | vk()          |
+| Flickr       | flickr()      |
