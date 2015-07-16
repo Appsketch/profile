@@ -74,3 +74,4 @@ Got a suggestion? Create an issue.
 | VK           | vk()          |
 | Flickr       | flickr()      |
 | Vine         | vine()        |
+| Disqus       | disqus()      |

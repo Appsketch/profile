@@ -31,7 +31,8 @@ class Profile
         'tumblr'      => Profile::TUMBLR,
         'vk'          => Profile::VK,
         'flickr'      => Profile::FLICKR,
-        'vine'        => Profile::VINE
+        'vine'        => Profile::VINE,
+        'disqus'      => Profile::DISQUS
     ];
 
     /**
@@ -88,6 +89,11 @@ class Profile
      * VINE
      */
     const VINE = 'https://vine.co/{{username}}';
+
+    /**
+     * DISQUS
+     */
+    const DISQUS = 'https://disqus.com/by/{{username}}';
 
     /**
      * @return mixed
