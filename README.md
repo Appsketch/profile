@@ -67,3 +67,4 @@ Got a suggestion? Create an issue.
 | Linked In    | linked_in()   |
 | Instagram    | instagram()   |
 | Telegram     | telegram()    |
+| Pinterest    | pinterest()   |

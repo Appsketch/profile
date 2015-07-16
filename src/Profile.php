@@ -26,7 +26,8 @@ class Profile
         'google_plus' => Profile::GOOGLE_PLUS,
         'linked_in'   => Profile::LINKED_IN,
         'instagram'   => Profile::INSTAGRAM,
-        'telegram'    => Profile::TELEGRAM
+        'telegram'    => Profile::TELEGRAM,
+        'pinterest'   => Profile::PINTEREST
     ];
 
     /**
@@ -58,6 +59,11 @@ class Profile
      * TELEGRAM
      */
     const TELEGRAM = 'https://web.telegram.org/#/im?p=@{{username}}';
+
+    /**
+     * PINTEREST
+     */
+    const PINTEREST = 'https://www.pinterest.com/{{username}}';
 
     /**
      * @return mixed
