@@ -77,3 +77,4 @@ Got a suggestion? Create an issue.
 | Disqus       | disqus()      |
 | Snapchat     | snapchat()    |
 | Medium       | medium()      |
+| Vevo         | vevo()        |

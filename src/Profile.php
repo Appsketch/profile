@@ -35,7 +35,8 @@ class Profile
         'vine'        => Profile::VINE,
         'disqus'      => Profile::DISQUS,
         'snapchat'    => Profile::SNAPCHAT,
-        'medium'      => Profile::MEDIUM
+        'medium'      => Profile::MEDIUM,
+        'vevo'        => Profile::VEVO
     ];
 
     /**
@@ -107,6 +108,11 @@ class Profile
      * MEDIUM
      */
     const MEDIUM = 'https://medium.com/@{{username}}';
+
+    /**
+     * VEVO
+     */
+    const VEVO = 'http://www.vevo.com/artist/{{username}}';
 
     /**
      * @return mixed
